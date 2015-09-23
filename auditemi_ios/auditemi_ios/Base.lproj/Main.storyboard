@@ -18,49 +18,66 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jC0-Y4-OtR" userLabel="Camera View" customClass="CameraView">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="420"/>
-                                <color key="backgroundColor" red="0.74107829949867332" green="0.77292974522563129" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ib3-ZH-hzf" userLabel="Controls View" customClass="CameraControlView">
-                                <rect key="frame" x="0.0" y="419" width="600" height="181"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jC0-Y4-OtR" userLabel="Camera View" customClass="CameraView">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Qg-9e-Dma">
-                                        <rect key="frame" x="225" y="74" width="150" height="34"/>
-                                        <color key="backgroundColor" red="1" green="0.93621706400168847" blue="0.98518475038795816" alpha="1" colorSpace="calibratedRGB"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zRW-38-o25" userLabel="Camera Display View">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="420"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ib3-ZH-hzf" userLabel="Camera Controls View">
+                                        <rect key="frame" x="0.0" y="419" width="600" height="181"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Qg-9e-Dma">
+                                                <rect key="frame" x="225" y="74" width="150" height="34"/>
+                                                <color key="backgroundColor" red="1" green="0.93621706400168847" blue="0.98518475038795816" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="34" id="IxA-Tn-eRA"/>
+                                                    <constraint firstAttribute="width" constant="150" id="TOG-K6-Fdy"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                <state key="normal" title="Capture">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="onCaptureButtonClicked" destination="jC0-Y4-OtR" eventType="touchUpInside" id="nTc-2k-crH"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.74528487246667297" green="0.87306451632186488" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="NB6-Tu-2xk"/>
-                                            <constraint firstAttribute="width" constant="150" id="pnt-4w-EEM"/>
+                                            <constraint firstAttribute="centerY" secondItem="2Qg-9e-Dma" secondAttribute="centerY" constant="-0.5" id="oQo-cG-AqW"/>
+                                            <constraint firstAttribute="centerX" secondItem="2Qg-9e-Dma" secondAttribute="centerX" id="xNP-t6-rww"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                        <state key="normal" title="Capture">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                    </button>
+                                    </view>
                                 </subviews>
-                                <color key="backgroundColor" red="0.74528487246667297" green="0.87306451632186488" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.74107829949867332" green="0.77292974522563129" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="centerY" secondItem="2Qg-9e-Dma" secondAttribute="centerY" id="9W8-Cl-Q2e"/>
-                                    <constraint firstAttribute="centerX" secondItem="2Qg-9e-Dma" secondAttribute="centerX" id="T2l-X9-FPr"/>
+                                    <constraint firstItem="ib3-ZH-hzf" firstAttribute="leading" secondItem="jC0-Y4-OtR" secondAttribute="leading" id="3vd-vi-4Kh"/>
+                                    <constraint firstAttribute="bottom" secondItem="ib3-ZH-hzf" secondAttribute="bottom" id="8Ja-um-4f9"/>
+                                    <constraint firstItem="zRW-38-o25" firstAttribute="top" secondItem="jC0-Y4-OtR" secondAttribute="top" id="OAs-dq-hNu"/>
+                                    <constraint firstItem="zRW-38-o25" firstAttribute="leading" secondItem="jC0-Y4-OtR" secondAttribute="leading" id="awm-xP-uJt"/>
+                                    <constraint firstItem="zRW-38-o25" firstAttribute="height" secondItem="jC0-Y4-OtR" secondAttribute="height" multiplier="0.7" id="fXV-aO-2Y9"/>
+                                    <constraint firstAttribute="trailing" secondItem="ib3-ZH-hzf" secondAttribute="trailing" id="kpc-Ix-Fsj"/>
+                                    <constraint firstItem="ib3-ZH-hzf" firstAttribute="top" secondItem="zRW-38-o25" secondAttribute="bottom" constant="-1" id="oWh-nD-iPJ"/>
+                                    <constraint firstAttribute="trailing" secondItem="zRW-38-o25" secondAttribute="trailing" id="sY8-Sj-eJJ"/>
                                 </constraints>
+                                <connections>
+                                    <outlet property="cameraControlsVierw" destination="ib3-ZH-hzf" id="wGw-zW-qfS"/>
+                                    <outlet property="cameraDisplayView" destination="zRW-38-o25" id="9XD-w7-rDT"/>
+                                </connections>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="ib3-ZH-hzf" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="400" id="8Wc-lL-E6f"/>
-                            <constraint firstItem="ib3-ZH-hzf" firstAttribute="height" secondItem="kh9-bI-dsS" secondAttribute="height" multiplier="0.3" constant="1" id="Aq2-py-WfX"/>
-                            <constraint firstItem="ib3-ZH-hzf" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="TCN-yi-kTQ"/>
-                            <constraint firstAttribute="trailing" secondItem="ib3-ZH-hzf" secondAttribute="trailing" id="VxU-b8-hS2"/>
-                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="ib3-ZH-hzf" secondAttribute="bottom" id="bVP-q8-q7c"/>
+                            <constraint firstItem="jC0-Y4-OtR" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="AW8-xq-LMz"/>
+                            <constraint firstItem="jC0-Y4-OtR" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="DYe-tR-760"/>
+                            <constraint firstAttribute="trailing" secondItem="jC0-Y4-OtR" secondAttribute="trailing" id="gIe-wf-uLZ"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="jC0-Y4-OtR" secondAttribute="bottom" id="hAJ-Jh-5C5"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="8Wc-lL-E6f"/>
-                            </mask>
-                        </variation>
                     </view>
                     <connections>
-                        <outlet property="cameraView" destination="jC0-Y4-OtR" id="ljG-OV-xat"/>
+                        <outlet property="cameraView" destination="jC0-Y4-OtR" id="HD8-Hv-PSt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>

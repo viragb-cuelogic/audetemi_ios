@@ -8,8 +8,17 @@
 
 #import <UIKit/UIKit.h>
 
+
+@protocol CameraViewDelegate <NSObject>
+
+- (void) onImageCapturedSuccessfully:(UIImage*) capturedImage;
+
+@end
+
 @interface CameraView : UIView<UINavigationControllerDelegate,UIImagePickerControllerDelegate> {
+
 }
 
-- (void) capturePicture;
+@property (assign, nonatomic) id <CameraViewDelegate> delegate;
+
 @end

@@ -9,13 +9,19 @@
 #import "CameraView.h"
 
 @interface CameraView () {
+    IBOutlet UIView *cameraDisplayView;
+    IBOutlet UIView *cameraControlsVierw;
     UIImagePickerController *picker;
 }
 @end
 
+
 @implementation CameraView {
+
     
 }
+
+@synthesize delegate;
 
 - (void) awakeFromNib {
     [self initialiseCameraView];
@@ -29,31 +35,33 @@
     picker.showsCameraControls = NO;
     picker.navigationBarHidden = YES;
     picker.toolbarHidden = YES;
-    picker.view.frame = self.frame;
+    picker.view.frame = cameraDisplayView.frame;
     
     picker.delegate = self;
-    [self addSubview:picker.view];
+    [cameraDisplayView addSubview:picker.view];
     
 }
-
-- (void) capturePicture {
-    NSLog(@"I m here in capturePicture CameraView");
-}
-
 
 #pragma mark - UIImagePickerController Delegate
 
-- (void) imagePickerController:(UIImagePickerController *)picker didFinishPickingImage:(UIImage *)image editingInfo:(NSDictionary *)editingInfo NS_DEPRECATED_IOS(2_0, 3_0) {
+- (void) imagePickerController:(UIImagePickerController *)picker
+         didFinishPickingImage:(UIImage *)image
+                   editingInfo:(NSDictionary *)editingInfo {
     
 }
 
 
 - (void) imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
-    
+     UIImage *capturedImage = info[UIImagePickerControllerEditedImage];
+    [self.delegate onImageCapturedSuccessfully:capturedImage];
 }
 
 - (void) imagePickerControllerDidCancel:(UIImagePickerController *)picker {
     
+}
+
+- (IBAction)onCaptureButtonClicked {
+    [picker takePicture];
 }
 
 @end
