@@ -7,16 +7,31 @@
 //
 
 #import "ViewController.h"
+#import "CameraView.h"
 
-@interface ViewController ()
-
+@interface ViewController () {
+    __weak IBOutlet CameraView *cameraView;
+}
 @end
 
-@implementation ViewController
+@implementation ViewController {
+    
+}
+
 
 - (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+  [super viewDidLoad];
+  // Do any additional setup after loading the view, typically from a nib.
+    
+}
+
+//- (IBAction)onCapturedClicked:(id)sender {
+//    NSLog(@"Clicked");
+//    [cameraView capturePicture];
+//}
+
+-(void) viewDidAppear:(BOOL)animated {
+  
 }
 
 - (void)didReceiveMemoryWarning {

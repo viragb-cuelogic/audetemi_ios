@@ -14,6 +14,8 @@
 		EB4A6F281BB11D94002F0601 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB4A6F271BB11D94002F0601 /* Images.xcassets */; };
 		EB4A6F2B1BB11D94002F0601 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB4A6F291BB11D94002F0601 /* LaunchScreen.xib */; };
 		EB4A6F371BB11D94002F0601 /* auditemi_iosTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EB4A6F361BB11D94002F0601 /* auditemi_iosTests.m */; };
+		EB641A3A1BB2733400B654CB /* CameraControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = EB641A391BB2733400B654CB /* CameraControlView.m */; };
+		EBA8A6071BB16F80008F9C26 /* CameraView.m in Sources */ = {isa = PBXBuildFile; fileRef = EBA8A6061BB16F80008F9C26 /* CameraView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +42,10 @@
 		EB4A6F301BB11D94002F0601 /* auditemi_iosTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = auditemi_iosTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB4A6F351BB11D94002F0601 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EB4A6F361BB11D94002F0601 /* auditemi_iosTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = auditemi_iosTests.m; sourceTree = "<group>"; };
+		EB641A381BB2733400B654CB /* CameraControlView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraControlView.h; sourceTree = "<group>"; };
+		EB641A391BB2733400B654CB /* CameraControlView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraControlView.m; sourceTree = "<group>"; };
+		EBA8A6051BB16F80008F9C26 /* CameraView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraView.h; sourceTree = "<group>"; };
+		EBA8A6061BB16F80008F9C26 /* CameraView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +95,10 @@
 				EB4A6F271BB11D94002F0601 /* Images.xcassets */,
 				EB4A6F291BB11D94002F0601 /* LaunchScreen.xib */,
 				EB4A6F1A1BB11D94002F0601 /* Supporting Files */,
+				EBA8A6051BB16F80008F9C26 /* CameraView.h */,
+				EBA8A6061BB16F80008F9C26 /* CameraView.m */,
+				EB641A381BB2733400B654CB /* CameraControlView.h */,
+				EB641A391BB2733400B654CB /* CameraControlView.m */,
 			);
 			path = auditemi_ios;
 			sourceTree = "<group>";
@@ -219,9 +229,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB641A3A1BB2733400B654CB /* CameraControlView.m in Sources */,
 				EB4A6F231BB11D94002F0601 /* ViewController.m in Sources */,
 				EB4A6F201BB11D94002F0601 /* AppDelegate.m in Sources */,
 				EB4A6F1D1BB11D94002F0601 /* main.m in Sources */,
+				EBA8A6071BB16F80008F9C26 /* CameraView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,7 +292,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Nikhil Ambekar (RAARKWRAJS)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Nikhil Ambekar (RAARKWRAJS)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -299,9 +312,10 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "0b8e1db3-d796-45c1-9220-5aef6c4dabc1";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -323,7 +337,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Nikhil Ambekar (RAARKWRAJS)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Nikhil Ambekar (RAARKWRAJS)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -336,8 +351,9 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PROVISIONING_PROFILE = "0b8e1db3-d796-45c1-9220-5aef6c4dabc1";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -347,6 +363,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Nikhil Ambekar (RAARKWRAJS)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Nikhil Ambekar (RAARKWRAJS)";
 				INFOPLIST_FILE = auditemi_ios/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -357,6 +375,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Nikhil Ambekar (RAARKWRAJS)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Nikhil Ambekar (RAARKWRAJS)";
 				INFOPLIST_FILE = auditemi_ios/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -416,6 +436,7 @@
 				EB4A6F3C1BB11D94002F0601 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EB4A6F3D1BB11D94002F0601 /* Build configuration list for PBXNativeTarget "auditemi_iosTests" */ = {
 			isa = XCConfigurationList;
@@ -424,6 +445,7 @@
 				EB4A6F3F1BB11D94002F0601 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

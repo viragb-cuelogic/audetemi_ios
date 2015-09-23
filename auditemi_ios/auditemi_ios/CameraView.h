@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  CameraView.h
 //  auditemi_ios
 //
 //  Created by cuelogic on 22/09/15.
@@ -8,9 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController {
-    
+@interface CameraView : UIView<UINavigationControllerDelegate,UIImagePickerControllerDelegate> {
 }
 
+- (void) capturePicture;
 @end
-
