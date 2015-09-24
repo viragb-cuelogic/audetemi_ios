@@ -14,6 +14,8 @@
     IBOutlet UIView *cameraDisplayView;
     IBOutlet UIView *cameraControlsVierw;
     
+    IBOutlet UIButton *flashUIButton;
+    
     UIImagePickerController *cameraPicker;
     UIImagePickerController *libraryPicker;
 
@@ -47,6 +49,7 @@
     cameraPicker.showsCameraControls = NO;
     cameraPicker.navigationBarHidden = NO;
     cameraPicker.toolbarHidden = YES;
+    
     cameraPicker.view.frame = cameraDisplayView.frame;
     cameraPicker.delegate = self;
     [cameraDisplayView addSubview:cameraPicker.view];
@@ -128,9 +131,11 @@
             [device lockForConfiguration:nil];
             if (!isFlashOn) {
                 [device setFlashMode:AVCaptureFlashModeOn];
+                [flashUIButton setTitle:@"Flash ON" forState:UIControlStateNormal];
                 isFlashOn = YES;
             } else {
                 [device setFlashMode:AVCaptureFlashModeOff];
+                [flashUIButton setTitle:@"Flash OFF" forState:UIControlStateNormal];
                 isFlashOn = NO;
             }
             [device unlockForConfiguration];
