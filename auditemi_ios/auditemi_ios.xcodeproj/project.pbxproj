@@ -14,6 +14,7 @@
 		EB4A6F281BB11D94002F0601 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB4A6F271BB11D94002F0601 /* Images.xcassets */; };
 		EB4A6F2B1BB11D94002F0601 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB4A6F291BB11D94002F0601 /* LaunchScreen.xib */; };
 		EB4A6F371BB11D94002F0601 /* auditemi_iosTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EB4A6F361BB11D94002F0601 /* auditemi_iosTests.m */; };
+		EB641A3D1BB2AACE00B654CB /* ImageEditorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB641A3C1BB2AACE00B654CB /* ImageEditorViewController.m */; };
 		EBA8A6071BB16F80008F9C26 /* CameraView.m in Sources */ = {isa = PBXBuildFile; fileRef = EBA8A6061BB16F80008F9C26 /* CameraView.m */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +42,8 @@
 		EB4A6F301BB11D94002F0601 /* auditemi_iosTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = auditemi_iosTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB4A6F351BB11D94002F0601 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EB4A6F361BB11D94002F0601 /* auditemi_iosTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = auditemi_iosTests.m; sourceTree = "<group>"; };
+		EB641A3B1BB2AACE00B654CB /* ImageEditorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageEditorViewController.h; sourceTree = "<group>"; };
+		EB641A3C1BB2AACE00B654CB /* ImageEditorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageEditorViewController.m; sourceTree = "<group>"; };
 		EBA8A6051BB16F80008F9C26 /* CameraView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraView.h; sourceTree = "<group>"; };
 		EBA8A6061BB16F80008F9C26 /* CameraView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -94,6 +97,8 @@
 				EB4A6F1A1BB11D94002F0601 /* Supporting Files */,
 				EBA8A6051BB16F80008F9C26 /* CameraView.h */,
 				EBA8A6061BB16F80008F9C26 /* CameraView.m */,
+				EB641A3B1BB2AACE00B654CB /* ImageEditorViewController.h */,
+				EB641A3C1BB2AACE00B654CB /* ImageEditorViewController.m */,
 			);
 			path = auditemi_ios;
 			sourceTree = "<group>";
@@ -225,6 +230,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EB4A6F231BB11D94002F0601 /* ViewController.m in Sources */,
+				EB641A3D1BB2AACE00B654CB /* ImageEditorViewController.m in Sources */,
 				EB4A6F201BB11D94002F0601 /* AppDelegate.m in Sources */,
 				EB4A6F1D1BB11D94002F0601 /* main.m in Sources */,
 				EBA8A6071BB16F80008F9C26 /* CameraView.m in Sources */,

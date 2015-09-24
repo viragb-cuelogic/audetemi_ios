@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "ImageEditorViewController.h"
 
 @interface ViewController () {}
 
@@ -16,14 +17,25 @@
     IBOutlet CameraView *cameraView;
 }
 
-- (void) onImageCapturedSuccessfully:(UIImage *) capturedImage {
-    NSLog(@"onImageCapturedSuccessfully");
+- (void) onImageCapturedSuccessfully:(UIImage *) capturedImage {   
+    
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    ImageEditorViewController *imageEditorViewController = [sb instantiateViewControllerWithIdentifier:@"ImageEditorViewController"];
+    imageEditorViewController.capturedImage = capturedImage;
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
+    [self.navigationController pushViewController:imageEditorViewController animated:NO];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     cameraView.delegate = self;
 }
+
+- (void)viewDidAppear:(BOOL)animated {
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
+    [cameraView initCameraPicker];
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

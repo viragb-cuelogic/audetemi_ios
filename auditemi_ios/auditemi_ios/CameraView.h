@@ -20,5 +20,8 @@
 }
 
 @property (assign, nonatomic) id <CameraViewDelegate> delegate;
+@property (nonatomic, assign) BOOL isFlashOn;
+
+- (void) initCameraPicker;
 
 @end
