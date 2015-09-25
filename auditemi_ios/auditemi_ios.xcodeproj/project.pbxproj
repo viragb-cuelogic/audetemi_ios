@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EB0631E51BB51B3F00F437DA /* FreeDrawView.m in Sources */ = {isa = PBXBuildFile; fileRef = EB0631E41BB51B3F00F437DA /* FreeDrawView.m */; };
 		EB33DC131BB407BC006C009E /* CircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = EB33DC121BB407BC006C009E /* CircleView.m */; };
 		EB33DC171BB407FF006C009E /* PointerView.m in Sources */ = {isa = PBXBuildFile; fileRef = EB33DC161BB407FF006C009E /* PointerView.m */; };
 		EB33DC1A1BB40811006C009E /* RectangleView.m in Sources */ = {isa = PBXBuildFile; fileRef = EB33DC191BB40811006C009E /* RectangleView.m */; };
@@ -33,6 +34,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EB0631E31BB51B3F00F437DA /* FreeDrawView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FreeDrawView.h; sourceTree = "<group>"; };
+		EB0631E41BB51B3F00F437DA /* FreeDrawView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FreeDrawView.m; sourceTree = "<group>"; };
 		EB33DC111BB407BC006C009E /* CircleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CircleView.h; sourceTree = "<group>"; };
 		EB33DC121BB407BC006C009E /* CircleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CircleView.m; sourceTree = "<group>"; };
 		EB33DC151BB407FF006C009E /* PointerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PointerView.h; sourceTree = "<group>"; };
@@ -86,6 +89,8 @@
 				EB33DC161BB407FF006C009E /* PointerView.m */,
 				EB33DC181BB40811006C009E /* RectangleView.h */,
 				EB33DC191BB40811006C009E /* RectangleView.m */,
+				EB0631E31BB51B3F00F437DA /* FreeDrawView.h */,
+				EB0631E41BB51B3F00F437DA /* FreeDrawView.m */,
 			);
 			name = VIews;
 			sourceTree = "<group>";
@@ -262,6 +267,7 @@
 				EB33DC131BB407BC006C009E /* CircleView.m in Sources */,
 				EB4A6F201BB11D94002F0601 /* AppDelegate.m in Sources */,
 				EB33DC171BB407FF006C009E /* PointerView.m in Sources */,
+				EB0631E51BB51B3F00F437DA /* FreeDrawView.m in Sources */,
 				EB4A6F1D1BB11D94002F0601 /* main.m in Sources */,
 				EBA8A6071BB16F80008F9C26 /* CameraView.m in Sources */,
 			);

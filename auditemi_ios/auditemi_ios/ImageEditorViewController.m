@@ -24,15 +24,22 @@
 
 - (void) viewDidLoad {
     [super viewDidLoad];
+    
     imageView.image = self.capturedImage;
     imageView.userInteractionEnabled = YES;
     
-//    // Allocate CircleView.
-//    circleView = [[CircleView alloc]initWithFrame:<#(CGRect)#>];
-//    [imageView addSubview:circleView];
+    // Allocate CircleView.
+    circleView = [[CircleView alloc]initWithFrame:CGRectMake(110.0, 110.0, 100, 100)];
+    circleView.userInteractionEnabled = YES;
+    [imageView addSubview:circleView];
     
     // Allocate PointerView.
-    pointerView = [[PointerView alloc]initWithFrame:CGRectMake(110.0, 110.0, 50, 50)];
+    UIImage *backgroundImage = [UIImage imageNamed:@"pointer.png"];
+    CGFloat nativeWidth = CGImageGetWidth(backgroundImage.CGImage);
+    CGFloat nativeHeight = CGImageGetHeight(backgroundImage.CGImage);
+    
+    pointerView = [[PointerView alloc]initWithFrame:CGRectMake(110.0, 110.0, nativeWidth, nativeHeight)];
+    pointerView.userInteractionEnabled = YES;
     [imageView addSubview:pointerView];
     
     // Allocate RectangleView.

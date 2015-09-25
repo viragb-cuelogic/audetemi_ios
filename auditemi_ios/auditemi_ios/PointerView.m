@@ -10,7 +10,6 @@
 
 @implementation PointerView {
     float oldX, oldY;
-    BOOL dragging;
 }
 
 - (instancetype)initWithFrame:(CGRect)frame
@@ -35,7 +34,7 @@
     CALayer *aLayer = [CALayer layer];
     CGFloat nativeWidth = CGImageGetWidth(backgroundImage.CGImage);
     CGFloat nativeHeight = CGImageGetHeight(backgroundImage.CGImage);
-    CGRect startFrame = CGRectMake(110.0, 110.0, nativeWidth, nativeHeight);
+    CGRect startFrame = CGRectMake(0, 0, nativeWidth, nativeHeight);
     aLayer.contents = (id)backgroundImage.CGImage;
     aLayer.frame = startFrame;
     [self.layer addSublayer:aLayer];

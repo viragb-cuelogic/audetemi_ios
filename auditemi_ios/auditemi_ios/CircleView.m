@@ -10,7 +10,6 @@
 
 @implementation CircleView {
     float oldX, oldY;
-    BOOL dragging;
 }
 
 - (instancetype)initWithFrame:(CGRect)frame
@@ -23,10 +22,15 @@
     return self;
 }
 
+-(void) awakeFromNib
+{
+    [self setUserInteractionEnabled:YES];
+}
+
 - (void) drawCircleView {
     NSLog(@"Drawing CircleView");
     UIBezierPath *bezierPath = [UIBezierPath bezierPath];
-    [bezierPath addArcWithCenter:CGPointMake(100, 100) radius:50 startAngle:0 endAngle:4 * M_PI clockwise:YES];
+    [bezierPath addArcWithCenter:CGPointMake(50, 50) radius:50 startAngle:0 endAngle:4 * M_PI clockwise:YES];
     
     CAShapeLayer *progressLayer = [[CAShapeLayer alloc] init];
     [progressLayer setPath:bezierPath.CGPath];
@@ -35,6 +39,34 @@
     [progressLayer setLineWidth:1];
     
     [self.layer addSublayer:progressLayer];
+}
+
+
+- (void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    
+    UITouch *touch = [[event allTouches] anyObject];
+    CGPoint touchLocation = [touch locationInView:self];
+    
+    oldX = touchLocation.x;
+    oldY = touchLocation.y;
+    
+}
+
+- (void) touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
+    UITouch *touch = [[event allTouches] anyObject];
+    CGPoint touchLocation = [touch locationInView:self];
+    
+    CGRect frame = self.frame;
+    frame.origin.x = self.frame.origin.x + touchLocation.x - oldX;
+    frame.origin.y =  self.frame.origin.y + touchLocation.y - oldY;
+    self.frame = frame;
+}
+
+- (void) touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
+}
+
+
+- (void) touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event {
 }
 
 

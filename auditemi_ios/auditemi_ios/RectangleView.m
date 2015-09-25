@@ -10,7 +10,6 @@
 
 @implementation RectangleView {
     float oldX, oldY;
-    BOOL dragging;
 }
 
 - (instancetype)initWithFrame:(CGRect)frame
