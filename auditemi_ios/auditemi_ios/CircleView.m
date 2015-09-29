@@ -17,14 +17,8 @@
     self = [super initWithFrame:frame];
     if (self) {
         [self drawCircleView];
-        [self setUserInteractionEnabled:YES];
     }
     return self;
-}
-
--(void) awakeFromNib
-{
-    [self setUserInteractionEnabled:YES];
 }
 
 - (void) drawCircleView {
@@ -53,6 +47,7 @@
 }
 
 - (void) touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
+    
     UITouch *touch = [[event allTouches] anyObject];
     CGPoint touchLocation = [touch locationInView:self];
     

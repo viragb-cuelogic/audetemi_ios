@@ -17,14 +17,8 @@
     self = [super initWithFrame:frame];
     if (self) {
         [self drawPointerView];
-        [self setUserInteractionEnabled:YES];
     }
     return self;
-}
-
--(void) awakeFromNib
-{
-    [self setUserInteractionEnabled:YES];
 }
 
 - (void) drawPointerView {
@@ -34,7 +28,7 @@
     CALayer *aLayer = [CALayer layer];
     CGFloat nativeWidth = CGImageGetWidth(backgroundImage.CGImage);
     CGFloat nativeHeight = CGImageGetHeight(backgroundImage.CGImage);
-    CGRect startFrame = CGRectMake(0, 0, nativeWidth, nativeHeight);
+    CGRect startFrame = CGRectMake(0, 0, nativeWidth * 2, nativeHeight * 2);
     aLayer.contents = (id)backgroundImage.CGImage;
     aLayer.frame = startFrame;
     [self.layer addSublayer:aLayer];

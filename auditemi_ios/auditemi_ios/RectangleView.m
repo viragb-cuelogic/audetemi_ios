@@ -16,15 +16,10 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
+        self.backgroundColor = [UIColor clearColor];
         [self drawRectangleView];
-        [self setUserInteractionEnabled:YES];
     }
     return self;
-}
-
--(void) awakeFromNib
-{
-    [self setUserInteractionEnabled:YES];
 }
 
 - (void) drawRectangleView {
@@ -55,6 +50,16 @@
 - (void) touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
     UITouch *touch = [[event allTouches] anyObject];
     CGPoint touchLocation = [touch locationInView:self];
+    
+//    if((self.frame.origin.x + touchLocation.x - oldX) < 0 || (self.frame.origin.x + touchLocation.x + oldX) > 768 ) {
+//        oldX = touchLocation.x;
+//        return;
+//    }
+//    
+//    if((self.frame.origin.y + touchLocation.y - oldY) < 0 || (self.frame.origin.y + touchLocation.y + oldY) > 1024 ) {
+//        oldY = touchLocation.y;
+//        return;
+//    }
     
     CGRect frame = self.frame;
     frame.origin.x = self.frame.origin.x + touchLocation.x - oldX;

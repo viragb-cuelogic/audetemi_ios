@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FreeDrawView : UIView
+@interface FreeDrawView : UIView {
+    
+}
 
 @end

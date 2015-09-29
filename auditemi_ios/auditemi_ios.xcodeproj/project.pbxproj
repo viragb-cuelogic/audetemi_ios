@@ -95,6 +95,17 @@
 			name = VIews;
 			sourceTree = "<group>";
 		};
+		EB3A5DB01BB94285000F2EE3 /* ViewContollers */ = {
+			isa = PBXGroup;
+			children = (
+				EB4A6F211BB11D94002F0601 /* ViewController.h */,
+				EB4A6F221BB11D94002F0601 /* ViewController.m */,
+				EB641A3B1BB2AACE00B654CB /* ImageEditorViewController.h */,
+				EB641A3C1BB2AACE00B654CB /* ImageEditorViewController.m */,
+			);
+			name = ViewContollers;
+			sourceTree = "<group>";
+		};
 		EB4A6F0E1BB11D94002F0601 = {
 			isa = PBXGroup;
 			children = (
@@ -116,20 +127,17 @@
 		EB4A6F191BB11D94002F0601 /* auditemi_ios */ = {
 			isa = PBXGroup;
 			children = (
+				EB3A5DB01BB94285000F2EE3 /* ViewContollers */,
 				EB33DC1B1BB41054006C009E /* pointer.png */,
 				EB33DC141BB407C9006C009E /* VIews */,
 				EB4A6F1E1BB11D94002F0601 /* AppDelegate.h */,
 				EB4A6F1F1BB11D94002F0601 /* AppDelegate.m */,
-				EB4A6F211BB11D94002F0601 /* ViewController.h */,
-				EB4A6F221BB11D94002F0601 /* ViewController.m */,
 				EB4A6F241BB11D94002F0601 /* Main.storyboard */,
 				EB4A6F271BB11D94002F0601 /* Images.xcassets */,
 				EB4A6F291BB11D94002F0601 /* LaunchScreen.xib */,
 				EB4A6F1A1BB11D94002F0601 /* Supporting Files */,
 				EBA8A6051BB16F80008F9C26 /* CameraView.h */,
 				EBA8A6061BB16F80008F9C26 /* CameraView.m */,
-				EB641A3B1BB2AACE00B654CB /* ImageEditorViewController.h */,
-				EB641A3C1BB2AACE00B654CB /* ImageEditorViewController.m */,
 			);
 			path = auditemi_ios;
 			sourceTree = "<group>";
@@ -404,6 +412,7 @@
 				INFOPLIST_FILE = auditemi_ios/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -416,6 +425,7 @@
 				INFOPLIST_FILE = auditemi_ios/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
