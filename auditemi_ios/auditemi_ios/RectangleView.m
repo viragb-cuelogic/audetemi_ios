@@ -18,8 +18,19 @@
     if (self) {
         self.backgroundColor = [UIColor clearColor];
         [self drawRectangleView];
+        
+        UIPinchGestureRecognizer *uiPinchGestureRecognizer = [[UIPinchGestureRecognizer alloc]
+                                                              initWithTarget:self action:@selector(pinchGestureAction:)];
+        uiPinchGestureRecognizer.delegate = self;
+        [self addGestureRecognizer:uiPinchGestureRecognizer];
     }
     return self;
+}
+
+- (void)pinchGestureAction:(UIPinchGestureRecognizer*)recognizer {
+    NSLog(@"pinch begin, scale: %f",recognizer.scale);
+    recognizer.view.transform = CGAffineTransformScale(recognizer.view.transform, recognizer.scale, recognizer.scale);
+    recognizer.scale = 1;
 }
 
 - (void) drawRectangleView {
@@ -34,7 +45,6 @@
     [progressLayer setLineWidth:1];
     
     [self.layer addSublayer:progressLayer];
-
 }
 
 - (void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
@@ -44,22 +54,33 @@
 
     oldX = touchLocation.x;
     oldY = touchLocation.y;
-    
 }
 
 - (void) touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
     UITouch *touch = [[event allTouches] anyObject];
     CGPoint touchLocation = [touch locationInView:self];
+
+    if((self.frame.origin.x + touchLocation.x - oldX) <= 0 ||
+       (self.frame.origin.x + touchLocation.x + oldX) >= self.superview.frame.size.width) {
+        oldX = touchLocation.x;
+        return;
+    }
     
-//    if((self.frame.origin.x + touchLocation.x - oldX) < 0 || (self.frame.origin.x + touchLocation.x + oldX) > 768 ) {
-//        oldX = touchLocation.x;
-//        return;
-//    }
-//    
-//    if((self.frame.origin.y + touchLocation.y - oldY) < 0 || (self.frame.origin.y + touchLocation.y + oldY) > 1024 ) {
-//        oldY = touchLocation.y;
-//        return;
-//    }
+    if((self.frame.origin.y + touchLocation.y - oldY) <= 0 ||
+       (self.frame.origin.y + touchLocation.y + oldY) >= self.superview.frame.size.height ) {
+        oldY = touchLocation.y;
+        return;
+    }
+    
+    if((self.frame.origin.x + touchLocation.x + self.frame.size.width - oldX ) >= self.superview.frame.size.width) {
+        oldX = touchLocation.x;
+        return;
+    }
+    
+    if((self.frame.origin.y + touchLocation.y + self.frame.size.height - oldY ) >= self.superview.frame.size.height){
+        oldY = touchLocation.y;
+        return;
+    }
     
     CGRect frame = self.frame;
     frame.origin.x = self.frame.origin.x + touchLocation.x - oldX;
@@ -73,7 +94,6 @@
 
 - (void) touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event {
 }
-
 
 @end
 

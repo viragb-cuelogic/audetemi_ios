@@ -33,8 +33,8 @@
     [self allocateAndAddFreeDrawView];
     
     [self allocateAndAddCircleView];
-    [self allocateAndAddPointerView];
     [self allocateAndAddRectangleView];
+    [self allocateAndAddPointerView];
 }
 
 - (void) allocateAndAddCircleView {

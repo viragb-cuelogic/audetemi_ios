@@ -48,6 +48,28 @@
     UITouch *touch = [[event allTouches] anyObject];
     CGPoint touchLocation = [touch locationInView:self];
     
+    if((self.frame.origin.x + touchLocation.x - oldX) <= 0 ||
+       (self.frame.origin.x + touchLocation.x + oldX) >= self.superview.frame.size.width) {
+        oldX = touchLocation.x;
+        return;
+    }
+    
+    if((self.frame.origin.y + touchLocation.y - oldY) <= 0 ||
+       (self.frame.origin.y + touchLocation.y + oldY) >= self.superview.frame.size.height ) {
+        oldY = touchLocation.y;
+        return;
+    }
+    
+    if((self.frame.origin.x + touchLocation.x + self.frame.size.width - oldX ) >= self.superview.frame.size.width) {
+        oldX = touchLocation.x;
+        return;
+    }
+    
+    if((self.frame.origin.y + touchLocation.y + self.frame.size.height - oldY ) >= self.superview.frame.size.height){
+        oldY = touchLocation.y;
+        return;
+    }
+    
     CGRect frame = self.frame;
     frame.origin.x = self.frame.origin.x + touchLocation.x - oldX;
     frame.origin.y =  self.frame.origin.y + touchLocation.y - oldY;

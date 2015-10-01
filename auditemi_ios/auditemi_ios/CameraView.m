@@ -35,6 +35,7 @@
 - (void) initCameraPicker {
     [self removeCameraPicker];
     [self addCameraPicker];
+    [flashUIButton setTitle:@"Flash OFF" forState:UIControlStateNormal];
 }
 
 - (void) addCameraPicker {
@@ -127,13 +128,15 @@
     Class captureDeviceClass = NSClassFromString(@"AVCaptureDevice");
     if (captureDeviceClass != nil) {
         AVCaptureDevice *device = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
-        if ([device hasFlash]){
+        if ([device hasFlash] && [device hasTorch]){
             [device lockForConfiguration:nil];
             if (!isFlashOn) {
+                [device setTorchMode:AVCaptureTorchModeOn];
                 [device setFlashMode:AVCaptureFlashModeOn];
                 [flashUIButton setTitle:@"Flash ON" forState:UIControlStateNormal];
                 isFlashOn = YES;
             } else {
+                [device setTorchMode:AVCaptureTorchModeOff];
                 [device setFlashMode:AVCaptureFlashModeOff];
                 [flashUIButton setTitle:@"Flash OFF" forState:UIControlStateNormal];
                 isFlashOn = NO;
